@@ -261,6 +261,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as countActions from './root/actions/counts';
 import * as goalActions from './root/actions/goal';
+import * as addActions from './root/actions/add';
+
 
 class App extends Component {
   decrementCount() {
@@ -274,7 +276,7 @@ class App extends Component {
     actions.changeCount(count);
   }
   render() {
-    const {count, name, state, value, string, goalname, goal_id} = this.props;
+    const {count, name, state, value, string, goalname, goal_id,namei} = this.props;
     
     console.log("stateeeee  "+JSON.stringify(state));
     return (
@@ -307,6 +309,11 @@ class App extends Component {
           title="goal ID change"
           onPress={() => this.props.actions.goalId(786)}
         />
+        <Text>{namei}</Text>
+        <Button
+          title="change"
+          onPress={() => this.props.actions.changeName('Aman sir')}
+        />
       </View>
     );
   }
@@ -330,11 +337,12 @@ const mapStateToProps = state => ({
   string: state.myReducer.string,
   goalname: state.goalDataReducer.goalname,
   goal_id:state.goalDataReducer.goal_id,
+  namei:state. addDataReducer.namei,
 
   state: state,
 });
 
-const ActionCreators = Object.assign({}, countActions,goalActions);
+const ActionCreators = Object.assign({}, countActions,goalActions,addActions);
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(ActionCreators, dispatch),
 });

@@ -6,3 +6,6 @@ export const STRING_CHANGE = 'STRING_CHANGE';
 export const GOAL_CHANGE = 'GOAL_CHANGE';
 export const GOAL_ID = 'GOAL_ID';
 
+
+export const CHANGENAME = 'CHANGANAME';
+
