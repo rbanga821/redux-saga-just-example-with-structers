@@ -1,9 +1,4 @@
-import {
-  COUNTER_CHANGE,
-  NAME_CHANGE,
-  STRING_CHANGE,
-  VALUE_CHANGE,
-} from '../constants';
+import {ACTION_TYPES} from '@constant';
 
 const initialState = {
   count: 0,
@@ -13,28 +8,28 @@ const initialState = {
 };
 const countReducer = (state = initialState, action) => {
   switch (action.type) {
-    case COUNTER_CHANGE:
+    case ACTION_TYPES.COUNTER_CHANGE:
       console.log('Reduser actionnnn---->    ' + JSON.stringify(action));
       return {
         ...state,
         count: action.payload,
       };
 
-    case NAME_CHANGE:
+    case ACTION_TYPES.NAME_CHANGE:
       console.log(' Reduser actionnnn---->    ' + JSON.stringify(action));
       return {
         ...state,
         name: action.payload,
       };
 
-    case VALUE_CHANGE:
+    case ACTION_TYPES.VALUE_CHANGE:
       console.log(' Reduser actionnnn---->    ' + JSON.stringify(action));
       return {
         ...state,
         value: action.payload,
       };
 
-    case STRING_CHANGE:
+    case ACTION_TYPES.STRING_CHANGE:
       console.log('Reduser actionnnn--->   ' + JSON.stringify(action));
       return {
         ...state,

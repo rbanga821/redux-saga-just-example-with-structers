@@ -1,4 +1,4 @@
-import {GOAL_CHANGE, GOAL_ID} from '../constants';
+import {ACTION_TYPES} from '@constant';
 
 const initialState = {
   goal_id: 0,
@@ -6,13 +6,13 @@ const initialState = {
 };
 const goalReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GOAL_CHANGE:
+    case ACTION_TYPES.GOAL_CHANGE:
       console.log('Reduser actionnnn---->    ' + JSON.stringify(action));
       return {
         ...state,
         goalname: action.payload,
       };
-    case GOAL_ID:
+    case ACTION_TYPES.GOAL_ID:
       console.log('Reduser actionnnn---->    ' + JSON.stringify(action));
       return {
         ...state,
