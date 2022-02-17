@@ -6,8 +6,6 @@ import {userDataUpdate, changeValue1} from '@redux/actions';
 function mapStateToProps(state, props) {
 console.log('stateeeee:->>>>>>>'+JSON.stringify(state));
   return {
-    // count: state.myReducer.count,
-    // name: state.myReducer.name,
     image:state.changesDataReducer.image,
     names:state.changesDataReducer.names,
     named:state.changesDataReducer.named,
